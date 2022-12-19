@@ -45,7 +45,7 @@ class SmartHome:
         self.servo.ChangeDutyCycle(2)
 
         self.light_on = False
-        self.blinds_open = False
+        self.window_open = False
         self.buzzer_on = False
 
         GPIO.output(self.LIGHT_PIN, GPIO.LOW)
@@ -62,27 +62,35 @@ class SmartHome:
     def manage_light_level(self) -> None:
         """
         User story 2:
-        When the user leaves the room the smart home system turns off the smart light bulb.
-        When the user goes back into the room, the system turns on the smart light bulb.
+        When the user is inside the room, the smart home system turns on the smart light bulb.
+        On the other hand, the smart home system turns off the light when the user leaves the room.
+        The infrared distance sensor is used to determine whether someone is inside the room.
 
         User story 3:
-        When the user comes back inside the room, before turning on the smart light bulb,
-        the system checks how much light is inside the room (by querying the photoresistor).
-        If the measured light level inside the room is above the threshold of 500 lux,
-        the smart home system does not turn on the smart light bulb even if the person is in the room;
-        on the other hand, if the actual light level is below the threshold of 500 lux
-        the system regulates the smart light bulb as usual.
+        Before turning on the smart light bulb, the system checks how much light is inside the room
+        (by querying the photoresistor).
+        If the measured light level inside the room is above or equal to the threshold of 500 lux,
+        the smart home system does not turn on the smart light bulb even if the user is in the room;
+         on the other hand, if the light level is below the threshold of 500 lux and the user is in the room,
+         the system turns on the smart light bulb as usual.
+
         """
         pass
 
-    def manage_blinds(self) -> None:
+    def measure_lux(self) -> float:
+        """
+        Measure the amount of lux inside the room by querying the photoresistor
+        """
+        pass
+
+    def manage_window(self) -> None:
         """
         Two temperature sensors, one inside and one outside the room are used to trigger the servo motor
-        to manage the blinds.
+        to manage the window.
         Whenever the internal temperature is lower than the  outside temperature minus two degrees,
-        the system opens the blinds by using the servo motor;
+        the system opens the window by using the servo motor;
         on the other hand, when the inside temperature is greater than the outside temperature
-        plus two degrees, the system closes the blinds by using the servo motor.
+        plus two degrees, the system closes the window by using the servo motor.
         """
         try:
             # Your code goes here
