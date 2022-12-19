@@ -91,6 +91,9 @@ class SmartHome:
         the system opens the window by using the servo motor;
         on the other hand, when the inside temperature is greater than the outside temperature
         plus two degrees, the system closes the window by using the servo motor.
+
+        Please note that the above behavior is only triggered when both of the sensors measure
+        temperature in the range of 18 to 30 degrees celsius. Otherwise, the window stays closed.
         """
         try:
             # Your code goes here
