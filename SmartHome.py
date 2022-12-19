@@ -85,11 +85,11 @@ class SmartHome:
 
     def manage_window(self) -> None:
         """
-        Two temperature sensors, one inside and one outside the room are used to trigger the servo motor
+        Two temperature sensors, one indoor and one outdoor, are used to trigger the servo motor
         to manage the window.
-        Whenever the internal temperature is lower than the  outside temperature minus two degrees,
+        Whenever the indoor temperature is lower than the  outdoor temperature minus two degrees,
         the system opens the window by using the servo motor;
-        on the other hand, when the inside temperature is greater than the outside temperature
+        on the other hand, when the indoor temperature is greater than the outdoor temperature
         plus two degrees, the system closes the window by using the servo motor.
 
         Please note that the above behavior is only triggered when both of the sensors measure
