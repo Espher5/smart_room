@@ -1,2 +1,0 @@
-class SmartHomeError(Exception):
-    pass

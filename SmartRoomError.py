@@ -1,0 +1,2 @@
+class SmartRoomError(Exception):
+    pass

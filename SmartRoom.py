@@ -10,7 +10,7 @@ except:
     import mock.psutil as psutil
 
 
-class SmartHome:
+class SmartRoom:
     AIR_QUALITY_PIN = 5
     SERVO_PIN = 6
     BUZZER_PIN = 16
@@ -62,15 +62,15 @@ class SmartHome:
     def manage_light_level(self) -> None:
         """
         User story 2:
-        When the user is inside the room, the smart home system turns on the smart light bulb.
-        On the other hand, the smart home system turns off the light when the user leaves the room.
+        When the user is inside the room, the smart room system turns on the smart light bulb.
+        On the other hand, the smart room system turns off the light when the user leaves the room.
         The infrared distance sensor is used to determine whether someone is inside the room.
 
         User story 3:
         Before turning on the smart light bulb, the system checks how much light is inside the room
         (by querying the photoresistor).
         If the measured light level inside the room is above or equal to the threshold of 500 lux,
-        the smart home system does not turn on the smart light bulb even if the user is in the room;
+        the smart room system does not turn on the smart light bulb even if the user is in the room;
          on the other hand, if the light level is below the threshold of 500 lux and the user is in the room,
          the system turns on the smart light bulb as usual.
 

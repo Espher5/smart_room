@@ -3,8 +3,8 @@ from unittest.mock import patch, PropertyMock
 
 import mock.adafruit_dht as adafruit_dht
 import mock.GPIO as GPIO
-from SmartHome import SmartHome
-from SmartHomeError import SmartHomeError
+from SmartRoom import SmartRoom
+from SmartRoomError import SmartRoomError
 
 
 class SmartHomeTest(unittest.TestCase):
